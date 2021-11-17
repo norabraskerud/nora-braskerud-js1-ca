@@ -3,7 +3,6 @@ li {
     list-style-type: none;
     text-align: center;
     
-
 }
 
 p{
@@ -23,6 +22,7 @@ p{
     max-width: 900px;
     margin: 0 auto;
     position: relative;
+    font-family: arial;
 }
 
 .results .name {
@@ -48,8 +48,6 @@ p{
     position: absolute;
     left: 50%;
     
-   
-
 }
 
 @keyframes spin {
