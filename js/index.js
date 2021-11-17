@@ -12,20 +12,21 @@ async function callApi() {
         const results = await response.json();
         console.log(results);
 
-results.forEach(function(movies){
-            resultsContainer.innerHTML +=   `<div class="card"></div>
-                                            <h1 class="name">${movies.search}</h1>`;
-                                            
-        })
-
+        createHtml(results);
     }
     
-catch (error) {
-    console.log(error);
-    resultsContainer.innerHTML = "error";
+    catch (error) {
+        console.log(error);
+        resultsContainer.innerHTML = error;
+    }
 }
-
-}
-
 
 callApi();
+
+
+function createHtml(results){
+    for (let i = 0; i < results.length; i++) {
+        resultsContainer.innerHTML +=   `<div class="card"></div>
+                                        <h1 class="name">${results[i].title}</h1>`;
+    }
+}
