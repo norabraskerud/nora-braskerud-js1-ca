@@ -26,6 +26,7 @@ callApi();
 
 function createHtml(results){
     for (let i = 0; i < results.length; i++) {
+        console.log(results[i]);
         resultsContainer.innerHTML +=   `<div class="card"></div>
                                         <h1 class="name">${results[i].title}</h1>`;
     }
