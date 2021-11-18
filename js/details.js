@@ -1,4 +1,6 @@
-const DetailContainer = document.querySelector(".container3")
+const DetailContainer = document.querySelector(".container3");
+const iddisplay = document.querySelector(".id-test");
+const message = document.querySelector(".message");
 
 const queryString = document.location.search;
 
@@ -10,23 +12,33 @@ console.log(params);
 
 const id = params.get("id");
 
-console.log(id);
+if (id === null) {
+    location.href = "/index.html";
+}
 
-const url = "";
+const urlNew = "https://movie-database-imdb-alternative.p.rapidapi.com/?s=Avengers%20Endgame&r=json&page=1" + id;
+const options = { "headers": {
+    "x-rapidapi-key": "916cb14e72msh92f3c6cac404df7p1f44b7jsne3fd7ba9d7b1"
+}}
+
+iddisplay.innerHTML = id; 
 
 
 async function newApiCall() {
 
     try{
-        const response = await fetch(url);
-        const details = await response.json();
+        const response = await fetch(urlNew, options);
+        const result = await response.json();
 
-        console.log(details);
+        console.log(details.get);
+
+        const details = result[0];
 
         createHtml(details);
+        
     } catch(error) {
         console.log(error);
-        DetailContainer.innerHTML = message("error", error);
+        DetailContainer.innerHTML = error;
     }
 }
 

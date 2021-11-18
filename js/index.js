@@ -37,7 +37,7 @@ function createHtml(results){
         resultsContainer.innerHTML +=   `<div class="card"> 
                                         <a href="details.html?id=${results.id}"</a>
                                         <h4 class="type">${results[i].Type}</h4>
-                                        <img scr="${results[i].Poster}"/>
+                                        <img scr="${results[i].Act}"/>
                                         <h4 class="name">${results[i].Title}</h4>
                                         <h4 class="year">${results[i].Year}</h4>
                                         </div>`;
