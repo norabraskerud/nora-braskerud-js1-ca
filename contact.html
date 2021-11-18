@@ -8,18 +8,49 @@
     <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body>
-   
-   
-   
-    <script src="js/contact.js"></script>
-
-<div class="navbar"></div>
+    <div class="navbar"></div>
     <li><a href="index.html">Home page</a></li>
     <li><a href="details.html">Details</a></li>
     <li><a href="contact.html">Contact</a></li>
 </div>
 
-    <div class="results"></div>
+    <main class="container1">
+        <div id="message"></div>
+        <h1>Fill out form</h1>
+        <form>
+            <div>
+                <label>
+                    Full name (required)
+                    <input name="fullname" id="fullname" />
+                </label>
+            </div>
+
+            <div>
+                <label>
+                    Subject (minimum 10 characters)
+                    <input name="subject" id="subject" />
+                </label>
+            </div>
+
+            <div>
+                <label>
+                    Email (required)
+                    <input name="email" id="email" />
+                </label>
+            </div>
+
+            <div>
+                <label>
+                    Address (minimum 25 characters)
+                    <input name="address" id="address"/>
+                </label>
+            </div>
+
+            <button disabled>Send</button>
+        </form>
+   
+   
+    <script src="js/contact.js"></script>
     
 </body>
 </html>
