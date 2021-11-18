@@ -1,6 +1,8 @@
 const API_URL = "https://movie-database-imdb-alternative.p.rapidapi.com/?s=Avengers%20Endgame&r=json&page=1";
 const proxy = "https://noroffcors.herokuapp.com";
 
+
+
 const corsFix = proxy + URL;
 
 const options = { "headers": {
@@ -32,12 +34,13 @@ callApi();
 function createHtml(results){
     for (let i = 0; i < results.length; i++) {
         console.log(results[i])
-        resultsContainer.innerHTML +=   `<div class="card">
+        resultsContainer.innerHTML +=   `<div class="card"> 
+                                        <a href="details.html?id=${results.id}"</a>
                                         <h4 class="type">${results[i].Type}</h4>
                                         <img scr="${results[i].Poster}"/>
                                         <h4 class="name">${results[i].Title}</h4>
                                         <h4 class="year">${results[i].Year}</h4>
-                                        </div>`
+                                        </div>`;
     }
 }
 
