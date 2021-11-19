@@ -12,6 +12,7 @@ console.log(params);
 
 const id = params.get("id");
 
+
 if (id === null) {
     location.href = "/index.html";
 }
@@ -28,13 +29,15 @@ async function newApiCall() {
 
     try{
         const response = await fetch(urlNew, options);
-        const result = await response.json();
+        const results = await response.json();
 
-        console.log(details.get);
+        console.log(results.Search);
 
-        const details = result[0];
+        const det = results.Search[0];
 
-        createHtml(details);
+        createHtml(det);
+
+        
         
     } catch(error) {
         console.log(error);
@@ -44,8 +47,10 @@ async function newApiCall() {
 
 newApiCall();
 
-function createHtml(details) {
-    DetailContainer.innerHTML = `<h1> ${details.Title} </h1>
-                                 <div class="title"> ${details.Poster} </div>
-                                 <div class="year"> ${details.Year}</div>`;
+function createHtml(det) {
+    console.log(det);
+    DetailContainer.innerHTML = `<h1> ${det.Title} </h1>
+                                 <div class="title"> ${det.Type} </div>
+                                 <div class="poster"> ${det.Poster}</div>
+                                 <div class="year"> ${det.ImdbID}</div>`;
 }
